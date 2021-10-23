@@ -1,4 +1,7 @@
-// Init
+/**
+ * User schema
+ * @author Yousuf Kalim
+ */
 const mongoose = require("mongoose");
 
 // Schema

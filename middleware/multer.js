@@ -1,5 +1,5 @@
 /**
- * User strategy to upload images
+ * Multer strategy to upload images
  * @author Yousuf Kalim
  */
 const multer = require("multer");

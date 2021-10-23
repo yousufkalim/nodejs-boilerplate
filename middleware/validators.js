@@ -14,7 +14,7 @@ Validations
 // User Signup Validation
 exports.validateUser = [
   check("name", "Name is required.").notEmpty().trim(),
-  check("cnic", "CNIC is required.").notEmpty().trim(),
+  check("cnic", "CNIC is required.").notEmpty().trim().isNumeric(),
   check("email", "Email is required.").notEmpty().isEmail().trim(),
   check("password", "Password is required.")
     .notEmpty()
@@ -26,17 +26,17 @@ exports.validateUser = [
     .isLength({ min: 8 }),
   check("gender", "Gender is required.").notEmpty(),
   check("role", "Role is required.").notEmpty(),
-  check("number", "Number is required.").notEmpty().trim(),
+  check("number", "Number is required.").notEmpty().isNumeric().trim(),
 ];
 
 // User Signup Validation
 exports.validateUserUpdate = [
   check("name", "Name is required.").notEmpty().trim(),
-  check("cnic", "CNIC is required.").notEmpty().trim(),
+  check("cnic", "CNIC is required.").notEmpty().isNumeric().trim(),
   check("email", "Email is required.").notEmpty().isEmail().trim(),
   check("gender", "Gender is required.").notEmpty(),
   check("role", "Role is required.").notEmpty(),
-  check("number", "Number is required.").notEmpty().trim(),
+  check("number", "Number is required.").notEmpty().isNumeric().trim(),
 ];
 
 /*
@@ -46,7 +46,7 @@ Result
 */
 
 /**
- * To check if request validated successfully or not according to our validation strategies
+ * To check if request validated successfully or not, according to our validation strategies
  * @param {object} req
  * @param {object} res
  * @param {*} next
